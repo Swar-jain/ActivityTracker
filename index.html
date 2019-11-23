@@ -5,36 +5,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="ActivityStyle.css">
 <script src="ActivityJS.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
+    <nav class="nav">
+        <ul class="ul">
+           <li>  Activity Tracker </li>
+        </ul>
+    </nav>
 
- <div class="column" style="background-color:#EFD8C4;">
-    <h2>OUTPUT</h2>
-    <p>Watch</p>
-  </div>
-  <div class="column" style="background-color:#EBCCAB;">
-    <div class="inner">
-      <h2>Monitored Variables</h2>
-      <label for="HeartPulse">Heart Pulse :</label> 
-      <div class="qty mt-5">
-          <span class="minus bg-dark">-</span>
-          <input type="number" class="count" name="qty" value="1">
-          <span class="plus bg-dark">+</span>
+<br><br><br>
+<div class="container">
+    <div class="leftpane">
+      <h2> Watch display </h2>
+        <svg width="400" height="110">
+            <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+          </svg>
       </div>
-      <br><br><br><br>
+    <div class="middlepane">
+      <h2>Monitored Variables</h2>
       
+        <p><button type="button" onClick="onClickMinus()">-</button>Heart Pulse: <label id="clicks">0</label><button type="button" onClick="onClickPlus()">+</button></p>
+        <p><button type="button" onClick="onClickMinusBP()">-</button>Blood Pressure: <label id="a">0</label><button type="button" onClick="onClickPlusBP()">+</button></p>
     </div>
-    <div class="inner"><h2>Enviroment Variables</h2></div>
-  </div>
-  <div class="column" style="background-color:#EEC2A9;">
-    <div class="inner"><h2>Input Variables</h2></div>
-    <div class="inner"><h2>Output Variables</h2></div>
-  </div>
 
+    <div class="rightpane">
+      <h1>Test Page</h1></div>
+  </div>
+  <script type="text/javascript">
+    var clicks = 0;
+    var a = 0;
+    function onClickPlus() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks;
+        if(clicks>10){
+          window.alert("pochu!");
+        }
+    };
+    function onClickMinus() {
+        clicks -= 1;
+        
+        document.getElementById("clicks").innerHTML = clicks;
+        if(clicks>10){
+          window.alert("pochu!");
+        }
+    };
+    function onClickPlusBP() {
+        a += 1;
+        console.log("+");
+        document.getElementById("a").innerHTML = a;
+        if(a>10){
+          window.alert("pochu!");
+        }
+    };
+    function onClickMinusBP() {
+        a -= 1;
+        console.log("-");
+        document.getElementById("a").innerHTML = a;
+        if(a>10){
+          window.alert("pochu!");
+        }
+    };
+    
+
+    </script>
 
 </body>
    
