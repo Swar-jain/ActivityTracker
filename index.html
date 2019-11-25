@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="ActivityStyle.css">
-<script src="ActivityJS.js"></script>
 </head>
 <body>
-
-    <nav class="nav">
+   <nav class="nav">
         <ul class="ul">
            <li>  Activity Tracker </li>
         </ul>
@@ -16,60 +13,69 @@
 
 <br><br><br>
 <div class="container">
-    <div class="leftpane">
-      <h2> Watch display </h2>
-        <svg width="400" height="110">
-            <rect width="300" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-          </svg>
-      </div>
+     <div class="leftpane">
+        <h2> Watch display </h2>
+        <label>Calories to be consumed :</label><input type="text" id='op1'  name ='CaloriesToBeConsumed'  disabled><br><br>
+        <label>Calories to be burnt:</label><input type = "text" id='op2' name ='CaloriesToBeBurnt'  disabled><br><br>
+        <label>Goal Status:</label><input type="text" id = 'op3' name ='GoalStatus'  disabled><br><br>
+        <h1 id = "time"></h1>
+        <h2>Alert Messages</h2>
+
+        <p>Click on the "x" symbol to close the alert message.</p>
+        <div class="alert" >
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+          <strong>Your Blood Pressure Seems Low</strong> Please grab a citrus food or sweet snack! 
+        </div>
+    </div>
     <div class="middlepane">
-      <h2>Monitored Variables</h2>
-      
-        <p><button type="button" onClick="onClickMinus()">-</button>Heart Pulse: <label id="clicks">0</label><button type="button" onClick="onClickPlus()">+</button></p>
-        <p><button type="button" onClick="onClickMinusBP()">-</button>Blood Pressure: <label id="a">0</label><button type="button" onClick="onClickPlusBP()">+</button></p>
+         <h2>Sensor Simulation</h2>
+
+         <br>
+         <img src="hp.gif" width="25%" height="15%" alignment ="center"><br>
+         <p><button type="button" onClick="onClickMinus()">-</button>
+          Heart Pulse: <label id="clicks">68</label>
+         <button type="button" onClick="onClickPlus()">+</button>
+      </p>
+      <p>
+          <img src="walk.gif" width="25%" height="15%" alignment ="center"><br>
+
+           Steps walked: <label id="Steps">0</label>
+        <button type="button" onClick="onClickStep()">+</button>
+       </p>
+       <p>
+          <img src="stairs.gif" width="25%" height="15%" alignment ="center"><br>
+          Stairs: <label id="Stair">0</label>
+          <button type="button" onClick="onClickStair()">+</button>
+      </p>
+      <p>
+          <img src="bp.gif" width="25%" height="15%" alignment ="center"><br>
+        <button type="button" onClick="onClickMinusBP()">-</button>Blood Pressure: <label id="a">0</label><button type="button" onClick="onClickPlusBP()">+</button></p>
     </div>
 
     <div class="rightpane">
-      <h1>Test Page</h1></div>
+      <h2>Heyy! We are here to help you achieve your fitness goal! Please Provide us with the following..</h2>
+      <img src="./weight.jpg" alt="Smiley face" width="25%" height="15%" alignment ="center">
+      <input id="weight" type="text" placeholder="Your weight in kilograms" alignment ="center" /> <br><br>
+      <img src="./height.jpeg" alt="Smiley face" width="25%" height="15%">
+      <input id="height" type="text" placeholder="Your height in centimeters" /><br> <br>
+      <label> Gender : 1. Female 2. Male </label>
+      <input id="gender" type="text" placeholder="Enter gender here!" /><br><br>
+
+      <label> Age</label>
+      <input type="text" id="Age" name="Age"><br><br>
+      <label>Choose the intensity of your goal : </label>
+        <label>1. Light 2. Medium 3. High</label>
+       <br><br>
+       <input id="GI" type="text" placeholder="Enter your goal intensity!" /><br> <br>
+       <label id="BMI"></label>
+       <label id="comment"></label>
+       <button onClick="calculateBMI()"> Track My fitness! </button>
+            
+      
+
+    </div>
   </div>
-  <script type="text/javascript">
-    var clicks = 0;
-    var a = 0;
-    function onClickPlus() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-        if(clicks>10){
-          window.alert("pochu!");
-        }
-    };
-    function onClickMinus() {
-        clicks -= 1;
-        
-        document.getElementById("clicks").innerHTML = clicks;
-        if(clicks>10){
-          window.alert("pochu!");
-        }
-    };
-    function onClickPlusBP() {
-        a += 1;
-        console.log("+");
-        document.getElementById("a").innerHTML = a;
-        if(a>10){
-          window.alert("pochu!");
-        }
-    };
-    function onClickMinusBP() {
-        a -= 1;
-        console.log("-");
-        document.getElementById("a").innerHTML = a;
-        if(a>10){
-          window.alert("pochu!");
-        }
-    };
-    
-
-    </script>
-
+  
 </body>
-   
+<script src="ActivityJS.js"></script>
 </html>
